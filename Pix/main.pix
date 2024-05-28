@@ -188,13 +188,42 @@
         <_activityFullName>Activities.Files.CopyFileCatalog</_activityFullName>
       </AbstractStep>
       <AbstractStep z:Id="i25" i:type="ExecutedStep">
+        <Childs />
+        <Id>16d30e43-64aa-4fc5-8578-af3674846133</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i26">
+            <PropertyName>PathFrom</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>Path.Combine(dict_paths["InFolder"], "Task.docx")</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i27">
+            <PropertyName>PathTo</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>Path.Combine(dict_paths["TempFolder"], "Task.docx")</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text></Text>
+        <_activityFullName>Activities.Files.CopyFileCatalog</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i28" i:type="ExecutedStep">
         <Childs>
-          <AbstractStep z:Id="i26" i:type="ExecutedStep">
+          <AbstractStep z:Id="i29" i:type="ExecutedStep">
             <Childs />
             <Id>345328eb-5013-4f60-9427-2120f45738af</Id>
-            <Parent z:Ref="i25" />
+            <Parent z:Ref="i28" />
             <PropertyValues>
-              <PropertyValue z:Id="i27">
+              <PropertyValue z:Id="i30">
                 <PropertyName>Value</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>""</_expression>
@@ -202,7 +231,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i28">
+              <PropertyValue z:Id="i31">
                 <PropertyName>To</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>str_addresses</_expression>
@@ -218,12 +247,12 @@
             <Text></Text>
             <_activityFullName>BR.Core.Base.Assign</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i29" i:type="ExecutedStep">
+          <AbstractStep z:Id="i32" i:type="ExecutedStep">
             <Childs />
             <Id>74a434c6-e914-4741-a8f6-ada47d77be63</Id>
-            <Parent z:Ref="i25" />
+            <Parent z:Ref="i28" />
             <PropertyValues>
-              <PropertyValue z:Id="i30">
+              <PropertyValue z:Id="i33">
                 <PropertyName>in_str_path</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>Path.Combine(dict_paths["TempFolder"], "Task1.xlsx")</_expression>
@@ -231,7 +260,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i31">
+              <PropertyValue z:Id="i34">
                 <PropertyName>in_str_pattern</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Имя"</_expression>
@@ -239,7 +268,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i32">
+              <PropertyValue z:Id="i35">
                 <PropertyName>in_str_range</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"1"</_expression>
@@ -247,7 +276,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i33">
+              <PropertyValue z:Id="i36">
                 <PropertyName>in_str_sheet</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>dict_config["StartSheet"].ToString()</_expression>
@@ -255,7 +284,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i34">
+              <PropertyValue z:Id="i37">
                 <PropertyName>out_list_addresses</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>list_strartTable</_expression>
@@ -271,12 +300,12 @@
             <Text></Text>
             <_activityFullName>Namespace_Custom.GetAddressesUsingRegex</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i35" i:type="ExecutedStep">
+          <AbstractStep z:Id="i38" i:type="ExecutedStep">
             <Childs />
             <Id>fe3d4414-fee0-426f-b7b2-5f531f12d49c</Id>
-            <Parent z:Ref="i25" />
+            <Parent z:Ref="i28" />
             <PropertyValues>
-              <PropertyValue z:Id="i36">
+              <PropertyValue z:Id="i39">
                 <PropertyName>CSCode</PropertyName>
                 <_dataType>Value</_dataType>
                 <_expression i:nil="true" />
@@ -293,12 +322,12 @@
             <Text></Text>
             <_activityFullName>BR.Core.Base.ExecuteCSCode</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i37" i:type="ExecutedStep">
+          <AbstractStep z:Id="i40" i:type="ExecutedStep">
             <Childs />
             <Id>6fa68897-5fcf-4fae-ac2a-0b03a0346ef0</Id>
-            <Parent z:Ref="i25" />
+            <Parent z:Ref="i28" />
             <PropertyValues>
-              <PropertyValue z:Id="i38">
+              <PropertyValue z:Id="i41">
                 <PropertyName>Text</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>str_addresses</_expression>
@@ -306,7 +335,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i39">
+              <PropertyValue z:Id="i42">
                 <PropertyName>Title</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Все найденные адреса"</_expression>
@@ -333,14 +362,14 @@
         <Text>Task-1</Text>
         <_activityFullName>BR.Core.Base.Container</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i40" i:type="ExecutedStep">
+      <AbstractStep z:Id="i43" i:type="ExecutedStep">
         <Childs>
-          <AbstractStep z:Id="i41" i:type="ExecutedStep">
+          <AbstractStep z:Id="i44" i:type="ExecutedStep">
             <Childs />
             <Id>870d4b04-a55a-4b75-8e9f-b7fdf9d8d845</Id>
-            <Parent z:Ref="i40" />
+            <Parent z:Ref="i43" />
             <PropertyValues>
-              <PropertyValue z:Id="i42">
+              <PropertyValue z:Id="i45">
                 <PropertyName>in_str_path</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>Path.Combine(dict_paths["TempFolder"], "Task1.xlsx")</_expression>
@@ -348,7 +377,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i43">
+              <PropertyValue z:Id="i46">
                 <PropertyName>in_str_pattern</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Имя"</_expression>
@@ -356,7 +385,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i44">
+              <PropertyValue z:Id="i47">
                 <PropertyName>in_str_range</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"1"</_expression>
@@ -364,7 +393,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i45">
+              <PropertyValue z:Id="i48">
                 <PropertyName>in_str_sheet</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>dict_config["StartSheet"].ToString()</_expression>
@@ -372,7 +401,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i46">
+              <PropertyValue z:Id="i49">
                 <PropertyName>out_list_addresses</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>list_strartTable</_expression>
@@ -388,12 +417,12 @@
             <Text></Text>
             <_activityFullName>Namespace_Custom.GetAddressesUsingRegex</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i47" i:type="ExecutedStep">
+          <AbstractStep z:Id="i50" i:type="ExecutedStep">
             <Childs />
             <Id>348b603c-772b-4f3c-9c4d-bc5ec6311a02</Id>
-            <Parent z:Ref="i40" />
+            <Parent z:Ref="i43" />
             <PropertyValues>
-              <PropertyValue z:Id="i48">
+              <PropertyValue z:Id="i51">
                 <PropertyName>CSCode</PropertyName>
                 <_dataType>Value</_dataType>
                 <_expression i:nil="true" />
@@ -517,12 +546,12 @@ application.Workbooks.Close();</_value>
             <Text></Text>
             <_activityFullName>BR.Core.Base.ExecuteCSCode</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i49" i:type="ExecutedStep">
+          <AbstractStep z:Id="i52" i:type="ExecutedStep">
             <Childs />
             <Id>268871f1-dc4e-4b55-92af-486067e6ee18</Id>
-            <Parent z:Ref="i40" />
+            <Parent z:Ref="i43" />
             <PropertyValues>
-              <PropertyValue z:Id="i50">
+              <PropertyValue z:Id="i53">
                 <PropertyName>in_str_path</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>Path.Combine(dict_paths["TempFolder"], "Task1.xlsx")</_expression>
@@ -530,7 +559,7 @@ application.Workbooks.Close();</_value>
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i51">
+              <PropertyValue z:Id="i54">
                 <PropertyName>in_str_pattern</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Имя"</_expression>
@@ -538,7 +567,7 @@ application.Workbooks.Close();</_value>
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i52">
+              <PropertyValue z:Id="i55">
                 <PropertyName>in_str_range</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"1"</_expression>
@@ -546,7 +575,7 @@ application.Workbooks.Close();</_value>
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i53">
+              <PropertyValue z:Id="i56">
                 <PropertyName>in_str_sheet</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>"Juiko"</_expression>
@@ -554,7 +583,7 @@ application.Workbooks.Close();</_value>
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i54">
+              <PropertyValue z:Id="i57">
                 <PropertyName>out_list_addresses</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>list_strartTable</_expression>
@@ -570,12 +599,12 @@ application.Workbooks.Close();</_value>
             <Text></Text>
             <_activityFullName>Namespace_Custom.GetAddressesUsingRegex</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i55" i:type="ExecutedStep">
+          <AbstractStep z:Id="i58" i:type="ExecutedStep">
             <Childs />
             <Id>83093eb2-7b25-47f9-a728-72ca26ff5b65</Id>
-            <Parent z:Ref="i40" />
+            <Parent z:Ref="i43" />
             <PropertyValues>
-              <PropertyValue z:Id="i56">
+              <PropertyValue z:Id="i59">
                 <PropertyName>CSCode</PropertyName>
                 <_dataType>Value</_dataType>
                 <_expression i:nil="true" />
@@ -634,12 +663,12 @@ workbook.Close();</_value>
             <Text></Text>
             <_activityFullName>BR.Core.Base.ExecuteCSCode</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i57" i:type="ExecutedStep">
+          <AbstractStep z:Id="i60" i:type="ExecutedStep">
             <Childs />
             <Id>4d2a72e9-f9d7-411d-a3a1-9135a18e6783</Id>
-            <Parent z:Ref="i40" />
+            <Parent z:Ref="i43" />
             <PropertyValues>
-              <PropertyValue z:Id="i58">
+              <PropertyValue z:Id="i61">
                 <PropertyName>PathFrom</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>Path.Combine(dict_paths["TempFolder"], "Task1.xlsx")</_expression>
@@ -647,7 +676,7 @@ workbook.Close();</_value>
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i59">
+              <PropertyValue z:Id="i62">
                 <PropertyName>PathTo</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>Path.Combine(dict_paths["ResultsFolder"], $"Result {DateTime.Now.ToString("yyMMdd hhmmss")}.xlsx")</_expression>
@@ -674,12 +703,238 @@ workbook.Close();</_value>
         <Text>Task-2</Text>
         <_activityFullName>BR.Core.Base.Container</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i60" i:type="ExecutedStep">
+      <AbstractStep z:Id="i63" i:type="ExecutedStep">
+        <Childs>
+          <AbstractStep z:Id="i64" i:type="ExecutedStep">
+            <Childs />
+            <Id>2b646479-2f52-4b77-b103-395eb0b2910d</Id>
+            <Parent z:Ref="i63" />
+            <PropertyValues>
+              <PropertyValue z:Id="i65">
+                <PropertyName>CSCode</PropertyName>
+                <_dataType>Value</_dataType>
+                <_expression i:nil="true" />
+                <_screenShotBase64 i:nil="true" />
+                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:string">var AppExcel = new Microsoft.Office.Interop.Excel.Application();
+var WorkbookExcel = AppExcel.Workbooks.Open(Path.Combine(dict_paths["TempFolder"], "Task1.xlsx"));
+var WorksheetExcel = (Microsoft.Office.Interop.Excel.Worksheet)WorkbookExcel.Sheets["Лист1"];
+var RangeExcel = WorksheetExcel.Range[WorksheetExcel.Cells[1, 1],
+    WorksheetExcel.Cells[WorksheetExcel.UsedRange.Row + WorksheetExcel.UsedRange.Rows.Count - 1,
+    WorksheetExcel.UsedRange.Column + WorksheetExcel.UsedRange.Columns.Count]];
+
+Microsoft.Office.Interop.Word.Table TableWord;
+
+var dataTable = new System.Data.DataTable();
+
+//Создание колонок
+for (int i = 1; i &lt;= RangeExcel.Columns.Count; i++)
+{
+    var column = new DataColumn();
+    column.ColumnName = "Column" + i;
+    dataTable.Columns.Add(column);
+}
+
+//Занесение данных в dataTable
+for (int i = 1; i &lt;= RangeExcel.Rows.Count; i++)
+{
+    var row = dataTable.NewRow();
+
+    for (int j = 1; j &lt;= RangeExcel.Columns.Count; j++)
+    {
+        if (RangeExcel.Cells[i, j] != null)
+            row["Column" + j] = (RangeExcel.Cells[i, j] as Microsoft.Office.Interop.Excel.Range).Value;
+    }
+
+    dataTable.Rows.Add(row);
+}
+
+AppExcel.Workbooks.Close();
+
+//Удаление пустых колонок
+var list_index = dataTable.Columns.Cast&lt;DataColumn&gt;()
+    .Select(dc =&gt; dataTable.Columns.IndexOf(dc)).Reverse();
+
+list_index.Select(ind =&gt;
+{
+    bool bool_isEmpty = dataTable.AsEnumerable().All(dr =&gt; string.IsNullOrEmpty(dr[ind].ToString()));
+    if (bool_isEmpty == true) { dataTable.Columns.RemoveAt(ind); }
+
+    return "";
+}).ToList();
+
+//Удаление пустых строк
+var intCol = dataTable.Columns.Cast&lt;DataColumn&gt;().Select(dc =&gt; dc.ColumnName).ToList()
+    .FindIndex(colName =&gt; dataTable.AsEnumerable().Any(row =&gt; $"{row[colName]}".Contains("Имя")));
+
+var intRow = dataTable.AsEnumerable().ToList().FindIndex(row =&gt; $"{row.ItemArray[intCol]}".Contains("Имя"));
+
+for (int i = intRow - 1; i &gt;= 0; i--)
+    dataTable.Rows.RemoveAt(i);
+
+List&lt;string&gt; names = new List&lt;string&gt;();
+
+var AppWord = new Microsoft.Office.Interop.Word.Application();
+var Document = AppWord.Documents.Open(Path.Combine(dict_paths["TempFolder"], "Task.docx"));
+
+foreach (Microsoft.Office.Interop.Word.Paragraph p in Document.Paragraphs)
+    names.Add(p.Range.Text.ToString().Trim());
+
+Document.Close();
+AppWord.Quit();
+
+var dr_isHave = dataTable.AsEnumerable()
+    .SelectMany(row =&gt; names,
+        (row, n) =&gt; new { dt_name = row, list_name = n })
+    .Where(obj =&gt; obj.list_name == $"{obj.dt_name[intCol]}")
+    .Select(obj =&gt; obj.dt_name).Distinct().ToList();
+
+AppWord = new Microsoft.Office.Interop.Word.Application();
+Document = AppWord.Documents.Open(Path.Combine(dict_paths["TempFolder"], "Task.docx"));
+
+if(Document.Tables.Count &gt; 0)
+{
+    for (int i = 0; i &lt; dr_isHave.Count; i++)
+    {
+        TableWord = Document.Tables[1];
+        TableWord.Delete();
+    }
+}
+
+Document.Save();
+Document.Close();
+AppWord.Quit();
+
+DataTable dt_isHave = null;
+
+if (dr_isHave is not null)
+    dt_isHave = dr_isHave.CopyToDataTable();
+
+if (dt_isHave is not null)
+{
+    var word = new System.Data.DataTable();
+
+    foreach (string data in dataTable.Rows[0].ItemArray)
+        word.Columns.Add(data);
+
+    word = dt_isHave.AsEnumerable().Select(dr =&gt;
+    {
+        var row = word.NewRow();
+
+        row["Имя"] = dr.ItemArray[0];
+        row["Фамилия"] = dr.ItemArray[1];
+        row["Пол"] = dr.ItemArray[2];
+        row["Возраст"] = dr.ItemArray[3];
+        row["Доход"] = dr.ItemArray[4];
+
+        word.Rows.Add(row);
+
+        return row;
+    }).CopyToDataTable();
+
+    AppWord = new Microsoft.Office.Interop.Word.Application();
+    Document = AppWord.Documents.Open(Path.Combine(dict_paths["TempFolder"], "Task.docx"));
+
+    foreach (Microsoft.Office.Interop.Word.Paragraph paragraph in Document.Paragraphs)
+    {
+        string name = paragraph.Range.Text.Replace("\r", "");
+
+        if (word.Rows.Cast&lt;DataRow&gt;().Select(row =&gt; row["Имя"].ToString()).Any(str =&gt; str == name))
+        {
+            Microsoft.Office.Interop.Word.Range newRange = paragraph.Range.Duplicate;
+
+            newRange.Collapse();
+            Microsoft.Office.Interop.Word.Table wordTable = Document.Tables.Add(newRange, 5, 2);
+
+            var table = AppWord.ActiveDocument.Tables[AppWord.ActiveDocument.Tables.Count];
+            table.set_Style("Сетка таблицы");
+
+            bool isNameColumn = true;
+            int i = 0;
+
+            var item = word.AsEnumerable()
+                .Where(row =&gt; row[0].ToString() == name).FirstOrDefault();
+
+            foreach (Microsoft.Office.Interop.Word.Row row in table.Rows)
+            {
+                isNameColumn = true;
+
+                foreach (Microsoft.Office.Interop.Word.Cell cell in row.Cells)
+                {
+                    if (isNameColumn)
+                    {
+                        isNameColumn = false;
+                        cell.Range.Text = word.Columns[i].ColumnName;
+                    }
+                    else
+                        cell.Range.Text = item[i].ToString();
+                }
+
+                i++;
+
+            }
+        }
+    }
+
+    Document.Save();
+    Document.Close();
+    AppWord.Quit();
+}</_value>
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text></Text>
+            <_activityFullName>BR.Core.Base.ExecuteCSCode</_activityFullName>
+          </AbstractStep>
+        </Childs>
+        <Id>744a7203-2cb3-45e6-a7f6-473b6eabb27d</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues />
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text>Task-3</Text>
+        <_activityFullName>BR.Core.Base.Container</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i66" i:type="ExecutedStep">
+        <Childs />
+        <Id>179303f9-85a9-4e28-b535-c2ddf063fd0f</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i67">
+            <PropertyName>PathFrom</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>Path.Combine(dict_paths["TempFolder"], "Task.docx")</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i68">
+            <PropertyName>PathTo</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>Path.Combine(dict_paths["ResultsFolder"], $"Result {DateTime.Now.ToString("yyMMdd hhmmss")}.docx")</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text></Text>
+        <_activityFullName>Activities.Files.CopyFileCatalog</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i69" i:type="ExecutedStep">
         <Childs />
         <Id>c62bc1a8-df77-4508-b08c-e5b32951f134</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i61">
+          <PropertyValue z:Id="i70">
             <PropertyName>FilePath</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>dict_paths["TempFolder"]</_expression>
@@ -709,28 +964,28 @@ workbook.Close();</_value>
   <Name>main.pix</Name>
   <Namespaces xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <Params>
-    <Parameter z:Id="i62">
+    <Parameter z:Id="i71">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>dt</Name>
       <RunnerType>None</RunnerType>
       <TypeString>System.Data.DataTable</TypeString>
     </Parameter>
-    <Parameter z:Id="i63">
+    <Parameter z:Id="i72">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>int_deletedRow</Name>
       <RunnerType>None</RunnerType>
       <TypeString>System.Double</TypeString>
     </Parameter>
-    <Parameter z:Id="i64">
+    <Parameter z:Id="i73">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>dict_config</Name>
       <RunnerType>None</RunnerType>
       <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
-    <Parameter z:Id="i65">
+    <Parameter z:Id="i74">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>dict_paths</Name>

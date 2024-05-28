@@ -37,6 +37,7 @@ chrome - Google Chrome</Text>
                     <PropertyName>Value</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>new List&lt;String&gt;{"excel"}</_expression>
+                    <_screenShotBase64 i:nil="true" />
                     <_value i:nil="true" />
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                   </PropertyValue>
@@ -44,6 +45,7 @@ chrome - Google Chrome</Text>
                     <PropertyName>To</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>list_processesToKill</_expression>
+                    <_screenShotBase64 i:nil="true" />
                     <_value i:nil="true" />
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                   </PropertyValue>
@@ -86,6 +88,7 @@ chrome - Google Chrome</Text>
             <PropertyName>Condition</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>list_processesToKill.Count==0</_expression>
+            <_screenShotBase64 i:nil="true" />
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
@@ -108,6 +111,7 @@ chrome - Google Chrome</Text>
                 <PropertyName>OnlyCurrenUser</PropertyName>
                 <_dataType>Value</_dataType>
                 <_expression i:nil="true" />
+                <_screenShotBase64 i:nil="true" />
                 <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:boolean">true</_value>
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
@@ -115,14 +119,8 @@ chrome - Google Chrome</Text>
                 <PropertyName>ProcessName</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>process</_expression>
+                <_screenShotBase64 i:nil="true" />
                 <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i15">
-                <PropertyName>ProcessId</PropertyName>
-                <_dataType>Value</_dataType>
-                <_expression i:nil="true" />
-                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:int">0</_value>
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
             </PropertyValues>
@@ -137,24 +135,27 @@ chrome - Google Chrome</Text>
         <Id>85c5554c-cc91-4480-8b6b-0dd7997f07ee</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i16">
+          <PropertyValue z:Id="i15">
             <PropertyName>Collection</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>list_processesToKill</_expression>
+            <_screenShotBase64 i:nil="true" />
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i16">
+            <PropertyName>Iterator</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>process</_expression>
+            <_screenShotBase64 i:nil="true" />
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
           <PropertyValue z:Id="i17">
-            <PropertyName>Iterator</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>process</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i18">
             <PropertyName>Counter</PropertyName>
             <_dataType>Value</_dataType>
             <_expression></_expression>
+            <_screenShotBase64 i:nil="true" />
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
@@ -166,26 +167,28 @@ chrome - Google Chrome</Text>
         <Text>Цикл для каждого</Text>
         <_activityFullName>BR.Core.Base.LoopForEach</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i19" i:type="ExecutedStep">
+      <AbstractStep z:Id="i18" i:type="ExecutedStep">
         <Childs>
-          <AbstractStep z:Id="i20" i:type="ExecutedStep">
+          <AbstractStep z:Id="i19" i:type="ExecutedStep">
             <Childs>
-              <AbstractStep z:Id="i21" i:type="ExecutedStep">
+              <AbstractStep z:Id="i20" i:type="ExecutedStep">
                 <Childs />
                 <Id>23b34985-0e03-427a-839d-5d7039293fe3</Id>
-                <Parent z:Ref="i20" />
+                <Parent z:Ref="i19" />
                 <PropertyValues>
-                  <PropertyValue z:Id="i22">
+                  <PropertyValue z:Id="i21">
                     <PropertyName>Value</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>new List&lt;string&gt; { @"C:\Users\user\Documents\Акты linq (Pix)\Linq Acts\TEMP" }</_expression>
+                    <_screenShotBase64 i:nil="true" />
                     <_value i:nil="true" />
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                   </PropertyValue>
-                  <PropertyValue z:Id="i23">
+                  <PropertyValue z:Id="i22">
                     <PropertyName>To</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>list_foldersToDelete</_expression>
+                    <_screenShotBase64 i:nil="true" />
                     <_value i:nil="true" />
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                   </PropertyValue>
@@ -199,7 +202,7 @@ chrome - Google Chrome</Text>
               </AbstractStep>
             </Childs>
             <Id>f9b026eb-42c1-4b5b-af60-3622bb586438</Id>
-            <Parent z:Ref="i19" />
+            <Parent z:Ref="i18" />
             <PropertyValues />
             <SelectedOptionId i:nil="true" />
             <EnableStatus>true</EnableStatus>
@@ -208,10 +211,10 @@ chrome - Google Chrome</Text>
             <Text></Text>
             <_activityFullName>BR.Core.Base.IfTrue</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i24" i:type="ExecutedStep">
+          <AbstractStep z:Id="i23" i:type="ExecutedStep">
             <Childs />
             <Id>4f800a93-758c-480d-a621-da24bf0ede57</Id>
-            <Parent z:Ref="i19" />
+            <Parent z:Ref="i18" />
             <PropertyValues />
             <SelectedOptionId i:nil="true" />
             <EnableStatus>true</EnableStatus>
@@ -224,10 +227,11 @@ chrome - Google Chrome</Text>
         <Id>319a5108-768e-4728-855f-1076dfa56a01</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i25">
+          <PropertyValue z:Id="i24">
             <PropertyName>Condition</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>list_foldersToDelete.Count==0</_expression>
+            <_screenShotBase64 i:nil="true" />
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
@@ -255,16 +259,18 @@ chrome - Google Chrome</Text>
     <d2p1:string>PIX.Core.Exceptions</d2p1:string>
   </Namespaces>
   <Params>
-    <Parameter z:Id="i26">
+    <Parameter z:Id="i25">
       <DefaultValueExpression>new List&lt;String&gt;{}</DefaultValueExpression>
       <Description></Description>
       <Name>list_processesToKill</Name>
+      <RunnerType>None</RunnerType>
       <TypeString>System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
-    <Parameter z:Id="i27">
+    <Parameter z:Id="i26">
       <DefaultValueExpression>new List&lt;String&gt;{}</DefaultValueExpression>
       <Description></Description>
       <Name>list_foldersToDelete</Name>
+      <RunnerType>None</RunnerType>
       <TypeString>System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
   </Params>
