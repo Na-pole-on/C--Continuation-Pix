@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Interopt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82d3ea303bb5d648f98e13a4e1900585ea9353f9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c5f4d6175242d779e8d8864b45b1038da702c43")]
 [assembly: System.Reflection.AssemblyProductAttribute("Interopt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Interopt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

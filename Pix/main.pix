@@ -840,38 +840,41 @@ if (dt_isHave is not null)
 
         if (word.Rows.Cast&lt;DataRow&gt;().Select(row =&gt; row["Имя"].ToString()).Any(str =&gt; str == name))
         {
-            Microsoft.Office.Interop.Word.Range newRange = paragraph.Range.Duplicate;
+            //диблируем абзац
+Microsoft.Office.Interop.Word.Range newRange = paragraph.Range.Duplicate;
+//сворачиваем обзац(стираем имеющщийся текс)
+newRange.Collapse(Microsoft.Office.Interop.Word.WdCollapseDirection.wdCollapseEnd);
+//всавляем пустую таблицу размером Columns.Count(соответсвует количеству параметров) строк и 2 столбца(первый для имён полонок, второй для значений)
+Microsoft.Office.Interop.Word.Table wordTable = Document.Tables.Add(newRange, 5, 2);
 
-            newRange.Collapse();
-            Microsoft.Office.Interop.Word.Table wordTable = Document.Tables.Add(newRange, 5, 2);
+//задаём границы
+var table = AppWord.ActiveDocument.Tables[AppWord.ActiveDocument.Tables.Count];
+table.set_Style("Сетка таблицы");
 
-            var table = AppWord.ActiveDocument.Tables[AppWord.ActiveDocument.Tables.Count];
-            table.set_Style("Сетка таблицы");
+bool isNameColumn = true;
+int i = 0;
 
-            bool isNameColumn = true;
-            int i = 0;
+var item = word.AsEnumerable()
+    .Where(row =&gt; row[0].ToString() == name).FirstOrDefault();
 
-            var item = word.AsEnumerable()
-                .Where(row =&gt; row[0].ToString() == name).FirstOrDefault();
+foreach (Microsoft.Office.Interop.Word.Row row in table.Rows)
+{
+    isNameColumn = true;
 
-            foreach (Microsoft.Office.Interop.Word.Row row in table.Rows)
-            {
-                isNameColumn = true;
+    foreach (Microsoft.Office.Interop.Word.Cell cell in row.Cells)
+    {
+        if (isNameColumn)
+        {
+            isNameColumn = false;
+            cell.Range.Text = word.Columns[i].ColumnName;
+        }
+        else
+            cell.Range.Text = item[i].ToString();
+    }
 
-                foreach (Microsoft.Office.Interop.Word.Cell cell in row.Cells)
-                {
-                    if (isNameColumn)
-                    {
-                        isNameColumn = false;
-                        cell.Range.Text = word.Columns[i].ColumnName;
-                    }
-                    else
-                        cell.Range.Text = item[i].ToString();
-                }
+    i++;
 
-                i++;
-
-            }
+}
         }
     }
 

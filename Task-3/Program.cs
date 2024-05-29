@@ -1,4 +1,5 @@
 ﻿using Interopt;
+using Microsoft.Office.Interop.Word;
 using System.Data;
 
 WorkWithInterrupt interrupt = new WorkWithInterrupt();
@@ -86,18 +87,15 @@ Document = AppWord.Documents.Open(pathToDocx);
 
 if(Document.Tables.Count > 0)
 {
-    for (int i = 0; i < dr_isHave.Count; i++)
-    {
-        TableWord = Document.Tables[1];
-        TableWord.Delete();
-    }
+    foreach (Microsoft.Office.Interop.Word.Table table in Document.Tables)
+        table.Delete();
 }
 
 Document.Save();
 Document.Close();
 AppWord.Quit();
 
-DataTable dt_isHave = null;
+System.Data.DataTable dt_isHave = null;
 
 if (dr_isHave is not null)
     dt_isHave = dr_isHave.CopyToDataTable();
@@ -133,11 +131,14 @@ if (dt_isHave is not null)
 
         if (word.Rows.Cast<DataRow>().Select(row => row["Имя"].ToString()).Any(str => str == name))
         {
+            //диблируем абзац
             Microsoft.Office.Interop.Word.Range newRange = paragraph.Range.Duplicate;
+            //сворачиваем обзац(стираем имеющщийся текс)
+            newRange.Collapse(WdCollapseDirection.wdCollapseEnd);
+            //всавляем пустую таблицу размером Columns.Count(соответсвует количеству параметров) строк и 2 столбца(первый для имён полонок, второй для значений)
+            Table wordTable = Document.Tables.Add(newRange, 5, 2);
 
-            newRange.Collapse();
-            Microsoft.Office.Interop.Word.Table wordTable = Document.Tables.Add(newRange, 5, 2);
-
+            //задаём границы
             var table = AppWord.ActiveDocument.Tables[AppWord.ActiveDocument.Tables.Count];
             table.set_Style("Сетка таблицы");
 
@@ -166,9 +167,49 @@ if (dt_isHave is not null)
 
             }
         }
+
     }
 
     Document.Save();
     Document.Close();
     AppWord.Quit();
 }
+
+    /*foreach (Paragraph para in wordDoc.Paragraphs)
+                    {
+                        //Получаем текст
+                        string paraText = para.Range.Text.Trim();
+                        // для кадой строки 
+                        foreach (Microsoft.Office.Interop.Excel.Range row in excelWorksheet.UsedRange.Rows)
+                        { 
+                            //получаем текст из ячейки ИМЯ
+                            Microsoft.Office.Interop.Excel.Range cell = row.Cells[headColumn] as Microsoft.Office.Interop.Excel.Range;
+                            // если не пусто, ячейка находится в диапазоне таблицы и имя из дока соответствует имени в ячейку
+                            if (cell.Value != null && cell.Row > headRow && paraText.Contains(cell.Value.ToString()))
+                            {
+                                //проверяем что не было записи на это имя, если было, пропускаем
+                                if (names.Contains(cell.Value.ToString()))
+                                    continue;
+                                //диблируем абзац
+                                Microsoft.Office.Interop.Word.Range newRange = para.Range.Duplicate;
+                                //сворачиваем обзац(стираем имеющщийся текс)
+                                newRange.Collapse(WdCollapseDirection.wdCollapseStart);
+                                //всавляем пустую таблицу размером Columns.Count(соответсвует количеству параметров) строк и 2 столбца(первый для имён полонок, второй для значений)
+                                Table wordTable = wordDoc.Tables.Add(newRange, excelWorksheet.UsedRange.Columns.Count, 2);
+                                //
+                                //задаём границы
+                                wordTable.Borders.Enable = 1;
+                                //заполнение таблицы
+                                for (int current_row = 1; current_row <= excelWorksheet.UsedRange.Columns.Count; current_row++)
+                                {
+                                    wordTable.Cell(current_row, 1).Range.ParagraphFormat.SpaceAfter = 0;
+                                    wordTable.Cell(current_row, 1).Range.Text = (excelWorksheet.UsedRange.Cells[headRow, current_row] as Microsoft.Office.Interop.Excel.Range)?.Text.ToString() ?? " ";
+
+                                    wordTable.Cell(current_row, 2).Range.ParagraphFormat.SpaceAfter = 0;
+                                    wordTable.Cell(current_row, 2).Range.Text = (excelWorksheet.UsedRange.Cells[row.Row - 1, current_row] as Microsoft.Office.Interop.Excel.Range)?.Text.ToString() ?? " ";
+                                }
+                                newRange.Collapse(WdCollapseDirection.wdCollapseEnd);
+                                //добавляем в спискок имён имя которое занести 
+                                names.Add(cell.Value.ToString());
+                            }
+                        }*/
